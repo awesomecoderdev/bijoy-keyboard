@@ -1,0 +1,62 @@
+{
+	"name": "Bijoy Keyboard",
+	"version": "1.0",
+	"manifest_version": 2,
+	"description": "Bijoy Keyboard is a system utility that enables you to directly type Bangla characters with your keyboard. Developed by Mohammad Ibrahim",
+	"icons": {
+		"128": "Icon/64.png",
+		"16": "Icon/16.png",
+		"32": "Icon/32.png",
+		"64": "Icon/64.png"
+	},
+	"permissions": [
+		"activeTab",
+		"notifications",
+		"tabs",
+		"storage",
+		"unlimitedStorage",
+		"contextMenus"
+	],
+	"optional_permissions": ["http://*/*", "https://*/*"],
+	"options_ui": {
+		"open_in_tab": true,
+		"page": "options.html"
+	},
+	"commands": {
+		"bijoy": {
+			"suggested_key": {
+				"default": "Ctrl+Shift+B",
+				"mac": "Command+Shift+B"
+			},
+			"description": "Change keyboard on browser."
+		}
+	},
+	"background": {
+		"page": "background.html",
+		"persistent": false
+	},
+	"browser_action": {
+		"default_icon": "Icon/32.png",
+		"default_popup": "popup.html",
+		"default_title": "Bijoy Keyboard"
+	},
+	"content_scripts": [
+		{
+			"css": ["assets/css/app.css"],
+			"js": ["assets/js/app.js"],
+			"matches": ["*://awesomecoder.dev/*"],
+			"run_at": "document_start"
+		}
+	],
+	"content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
+	"web_accessible_resources": [
+		"a.html",
+		"blank.html",
+		"Icon/*.png",
+		"template/*.html",
+		"*.svg",
+		"*.mp3",
+		"assets/css/*.css",
+		"assets/js/*.js"
+	]
+}
