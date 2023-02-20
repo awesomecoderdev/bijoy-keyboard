@@ -18,6 +18,7 @@ mix.webpackConfig({ stats: { children: false } })
 	])
 	.js("src/js/app.js", "assets/js")
 	.js("src/js/background.js", "assets/js")
+	.js("src/js/serviceworker.js", "assets/js")
 	.react()
 	.sourceMaps(false, "source-map")
 	.disableSuccessNotifications();

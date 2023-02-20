@@ -26,14 +26,16 @@
 		"bijoy": {
 			"suggested_key": {
 				"default": "Ctrl+Shift+B",
-				"mac": "Command+Shift+B"
+				"mac": "Command+Shift+B",
+				"windows": "Ctrl+Shift+B",
+				"chromeos": "Ctrl+Shift+B",
+				"linux": "Ctrl+Shift+B"
 			},
 			"description": "Change keyboard on browser."
 		}
 	},
 	"background": {
-		"page": "background.html",
-		"persistent": false
+		"service_worker": "assets/js/serviceworker.js"
 	},
 	"browser_action": {
 		"default_icon": "Icon/32.png",
@@ -44,8 +46,7 @@
 		{
 			"css": ["assets/css/app.css"],
 			"js": ["assets/js/app.js"],
-			"matches": ["*://awesomecoder.dev/*"],
-			"run_at": "document_start"
+			"matches": ["<all_urls>"]
 		}
 	],
 	"content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
