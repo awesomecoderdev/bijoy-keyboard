@@ -44,6 +44,7 @@
 	},
 	"content_scripts": [
 		{
+			"css": ["assets/css/app.css"],
 			"js": ["assets/js/app.js"],
 			"matches": ["<all_urls>"]
 		}
